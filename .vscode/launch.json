@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "calendar_scheduler",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "calendar_scheduler (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "calendar_scheduler (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Flutter on Android",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "emulator-5554" // flutter devices 로 확인
+        },
+        {
+            "name": "Flutter on iOS",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "6B422DAB-03A0-48D1-8BDD-D3E452650002" // flutter devices 에 나온 iOS 시뮬레이터 ID
+        }
+        ],
+        "compounds": [
+        {
+            "name": "Flutter: Android + iOS",
+            "configurations": ["Flutter on Android", "Flutter on iOS"]
+        }
+    ]
+}
