@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
+  runApp(
+    MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        body: TableCalendar(
+          focusedDay: DateTime.now(),
+          firstDay: DateTime(1990, 1, 1),
+          lastDay: DateTime(2999, 12, 31),
+          selectedDayPredicate: (DateTime day) {
+            final now = DateTime.now();
+            return DateTime(
+              day.year,
+              day.month,
+              day.day,
+            ).isAtSameMomentAs(DateTime(now.year, now.month, now.day));
+          },
+          onDaySelected: (DateTime selectedDay, DateTime focusedDay) {},
+          onPageChanged: (DateTime focusedDay) {},
+          rangeSelectionMode: RangeSelectionMode.toggledOff,
+          onRangeSelected:
+              (DateTime? start, DateTime? end, DateTime focusedDay) {},
         ),
       ),
-    );
-  }
+    ),
+  );
 }
